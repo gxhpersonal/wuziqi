@@ -1,4 +1,5 @@
-﻿$(function(){
+﻿
+$(function(){
   var canvas = document.querySelector('#canvas');
   var ctx = canvas.getContext('2d');
   var r = function(deg){
@@ -73,7 +74,8 @@
       imgb.onload = function(){
         ctx.drawImage(imgb,qizi.x*blockS+2,qizi.y*blockS+2,38,38)
       }
-      imgb.src = './image/qizib.png';      // ctx.fill()
+      imgb.src = './image/qizib.png';
+      // ctx.fill()
     }else{
       var imgw = new Image();
       imgw.onload = function(){
@@ -228,4 +230,12 @@ click()
     $('.banner img').fadeOut(300).eq(num).fadeIn(300);
   }
   var t = setInterval(change,8000);
+
+  $(".rules").click(function(){
+    $('.rule-popup').css({'display':'flex'})
+  })
+
+  $(".rule-popup").click(function(){
+    $(this).hide()
+  })
 })
